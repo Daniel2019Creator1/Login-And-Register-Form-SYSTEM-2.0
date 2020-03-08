@@ -7,11 +7,11 @@
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
 </head>
 <body>  
-        <form class="form" align="center" id="form" action="index.html" method="GET" enctype="multipart/form-data" name="myform">
+        <form class="form" align="center" id="form" action="index.html" method="GET" enctype="multipart/form-data" onsubmit="logout()" name="myform">
         <i class='far fa-user-circle' Unicode="f2be" style='font-size:84px;padding: 5px; color: #27a5df'></i>
         <h1> User Info </h1><hr>
         <p id="info"></p><br />
-        <button class="button" type="button" role="button" onclick="logout()">Logout
+        <button class="button" type="button" role="button" id="submit" onclick="logout()">Logout
        <i class="fas fa-power-off"></i>
         </button>
             </form>
@@ -136,30 +136,14 @@ Border: 5px dotted #27a5df;
 }
     </style>
     <script>
-const username=document.getElementById("username");
-const password=document.getElementById("password");
-
-function  $(id) {
-    return document.getElementById(id);
-}
-function login() {
-    var x = $("username").value;
-    var y = $("password").value;
-        
-    if(x.trim()!==""&&y.trim()!=="") {
-        alert("welcome back user : "+x);
-        $("info").innerHTML="You are logged in as:<br><br>Username: <b>"+x+"</b><br>Password: <b>"+y+"</b>";
-  $("ma").style.display="none";
-  $("out").style.display="inline";
-    }else {
-        alert("Invalid user name or password");
-    }
-}
 function logout() {
-  $("username").value="";
-  $("password").value="";
   $("info").innerHTML="";
   window.location = "index.html"; // Redirecting to other page.
+}
+            
+function logout() {
+alert ("Logout successfully!");
+window.location = "index.html"; // Redirecting to other page.
 }
     </script>
 </body>
