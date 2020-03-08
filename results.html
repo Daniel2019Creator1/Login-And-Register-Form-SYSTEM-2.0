@@ -2,19 +2,19 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Login Form</title>
+<title class="title" value="!LOGGED IN!">!LOGGED IN!</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
 </head>
-<body>
-    <section id="out" style="display: none;">
-        <i class='far fa-user-circle' style='font-size:84px;padding: 5px; color: #27a5df'></i>
+<body>  
+        <form class="form" align="center" id="form" action="index.html" method="GET" enctype="multipart/form-data" name="myform">
+        <i class='far fa-user-circle' Unicode="f2be" style='font-size:84px;padding: 5px; color: #27a5df'></i>
         <h1> User Info </h1><hr>
         <p id="info"></p><br />
-        <button onclick="logout()">Logout
+        <button class="button" type="button" role="button" onclick="logout()">Logout
        <i class="fas fa-power-off"></i>
         </button>
-    </section>
+            </form>
     <style>
         @media screen and (min-width: 480px) {
   #form {
@@ -136,20 +136,11 @@ Border: 5px dotted #27a5df;
 }
     </style>
     <script>
-        const username=document.getElementById("username");
+const username=document.getElementById("username");
 const password=document.getElementById("password");
 
 function  $(id) {
     return document.getElementById(id);
-}
-function ch() {
-    $("2").style.display="none";
-    $("1").style.display="inline";
-}
-
-function uc() {
-    $("1").style.display="none";
-    $("2").style.display="inline";
 }
 function login() {
     var x = $("username").value;
@@ -168,8 +159,7 @@ function logout() {
   $("username").value="";
   $("password").value="";
   $("info").innerHTML="";
-  $("out").style.display="none";
-  $("ma").style.display="inline";
+  window.location = "index.html"; // Redirecting to other page.
 }
     </script>
 </body>
