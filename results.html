@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login Form</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+</head>
+<body>
+    <section id="out" style="display: none;">
+        <i class='far fa-user-circle' style='font-size:84px;padding: 5px; color: #27a5df'></i>
+        <h1> User Info </h1><hr>
+        <p id="info"></p><br />
+        <button onclick="logout()">Logout
+       <i class="fas fa-power-off"></i>
+        </button>
+    </section>
+    <style>
+        @media screen and (min-width: 480px) {
+  #form {
+    width:400px;
+  }
+}
+    @-webkit-keyframes animatebottom {
+  0% {
+opacity:0;
+    margin-top:500px;
+}
+
+
+
+100% {
+opacity:1;
+    margin-top:0px;
+}
+}
+
+@keyframes animatebottom { 
+  0% {
+opacity:0;
+    margin-top:500px;
+}
+
+
+
+100% {
+opacity:1;
+    margin-top:0px;
+}
+}
+        input{
+        color: #888;margin:5px;
+            border-radius: 0px;
+    border: 0px solid #eee;
+    padding: 8px;
+    background: #eee;
+    transition-duration:.5s;
+        }
+        Input:Focus{
+            border-radius:50px;
+            background-color: #ccc;
+            color:#fff;
+        }
+        a{
+    text-decoration:none!important;
+    color:#FFEB3B;
+}
+        hr {
+    border: 2px solid #c1c1c1;
+}
+        button{
+            cursor: hand;
+            border: none;
+    background: #27a5df;
+    color: white;
+    padding: 11px 26px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition-duration:.1s;
+        }
+        Button:active{
+            background-color: #555;
+            
+        }
+        *{
+            outline: none;
+            user-select: none;
+        }
+        H1{
+            width:100%;
+            color: #888;
+        }
+        #form{
+        outline:15px solid #4bbaed;
+        border-radius: 10px;
+    text-align: -webkit-center;
+    background: rgba(255,255,255,1);
+    padding: 30px 10px;
+     border-top: 30px solid #27a5df;
+    border-bottom: 30px solid #27a5df;
+    box-shadow: -1px 1px 20px rgba(0, 0, 0,0.5);
+    Border:none;
+    outline:none;
+    animation:  animatebottom 1s cubic-bezier(1, -0.06, 0.26, 1.06);
+        }
+        body{
+         -webkit-user-select:none;
+   -moz-user-select: none;
+   -ms-user-select: none; 
+    user-select: none;
+    background-image:url("https://0xpl.000webhostapp.com/c.jpg");
+    background-attachment: fixed;
+    background-position: bottom left ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition:1s;
+            padding: 10px;
+            margin:0;
+            color: #888;
+            font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+            text-align: -webkit-center;
+            
+        }
+        footer{
+            padding:15px;
+            background-color:rgba(255,255,255,.3);
+            text-align:-webkit-center;
+            color:#fff!important;
+        }
+header h1{
+width:90%;
+Border: 5px dotted #27a5df;
+    color: #27a5df;
+    text-align:-webkit-center;
+    border-radius:5px;
+}
+    </style>
+    <script>
+        const username=document.getElementById("username");
+const password=document.getElementById("password");
+
+function  $(id) {
+    return document.getElementById(id);
+}
+function ch() {
+    $("2").style.display="none";
+    $("1").style.display="inline";
+}
+
+function uc() {
+    $("1").style.display="none";
+    $("2").style.display="inline";
+}
+function login() {
+    var x = $("username").value;
+    var y = $("password").value;
+        
+    if(x.trim()!==""&&y.trim()!=="") {
+        alert("welcome back user : "+x);
+        $("info").innerHTML="You are logged in as:<br><br>Username: <b>"+x+"</b><br>Password: <b>"+y+"</b>";
+  $("ma").style.display="none";
+  $("out").style.display="inline";
+    }else {
+        alert("Invalid user name or password");
+    }
+}
+function logout() {
+  $("username").value="";
+  $("password").value="";
+  $("info").innerHTML="";
+  $("out").style.display="none";
+  $("ma").style.display="inline";
+}
+    </script>
+</body>
+</html>
