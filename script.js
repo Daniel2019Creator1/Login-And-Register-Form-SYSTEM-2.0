@@ -8,6 +8,7 @@ var myInput = document.getElementById("myInput").value;
 if ( Username == "1234" && myInput == "1234"){
 alert ("Login successfully!");
 window.location = "results.html"; // Redirecting to other page.
+document.location = "results.html";
 return false;
 }
 else{
